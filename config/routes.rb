@@ -2,8 +2,6 @@ Quotes::Application.routes.draw do
   resources :quotes
   resources :tags
   resources :users
-  resources :sesh
-  login :to "users#login"
   root :to => 'quotes#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
