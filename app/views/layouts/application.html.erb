@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quotes</title>
+  <%= stylesheet_link_tag :all %>
+	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js", "jquery.rails.js", "jquery.ligatures.js", :as => "blockq.js" %>
+<%= csrf_meta_tag %>
+<script>
+	$(document).ready(function(){
+		$("blockquote").ligatures();
+	});
+</script>
+</head>
+<body>
+	<div class="section" id="header">
+		<%= link_to "blockq", root_path %>
+		<%= link_to "Get involved!", new_user_path %>
+		<%= link_to "login", login_path%>
+	</div>
+	<div class="section" id="main">
+		<p id="notice"><%= notice %></p>
+		<%= yield %>
+	</div>
+</body>
+</html>
