@@ -1,16 +1,1 @@
-<blockquote>
-  &#8220;<%= raw(@quote.text) %>&#8221;
-</blockquote>
-<cite><%= @quote.author %></cite>
-<% if @quote.tags.present? %>
-	<ul id="tags">
-	<% @quote.tags.each do |tag| %>
-		<li class="tag">
-			<%= link_to(tag.name, tag)%>
-		</li>
-	<% end %>
-	</ul>
-<% end %>
-
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>
+<%= render @quote %>

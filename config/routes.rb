@@ -1,8 +1,15 @@
 Quotes::Application.routes.draw do
+  resources :users
   resources :quotes
   resources :tags
-  resources :users
+  
+  resource :session, :only => [:new, :create, :destroy]
+  match 'login' => 'sessions#new', :as => :login
+  match 'logout' => 'sessions#destroy', :as => :logout
+  match 'signup' => 'users#new', :as => :signup
   root :to => 'quotes#index'
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

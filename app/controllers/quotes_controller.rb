@@ -1,6 +1,6 @@
 class QuotesController < ApplicationController
   respond_to :html
-    
+  before_filter :login_required, :only => [:new, :create]
   def index
     @quotes = Quote.all
     respond_with(@quotes)
@@ -12,7 +12,10 @@ class QuotesController < ApplicationController
   end
 
   def new
-    @quote = Quote.new
+    @quote = current_user.quotes.build
+    @quote.text = params[:t]
+    @quote.author = params[:a]
+    @quote.source = params[:s]
     respond_with(@quote)
   end
 
@@ -21,7 +24,7 @@ class QuotesController < ApplicationController
   end
   
   def create
-    @quote = Quote.new(params[:quote])
+    @quote = current_user.quotes.build(params[:quote])
     if @quote.save
       flash[:notice] = 'Quote was successfully added.'
     end

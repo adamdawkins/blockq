@@ -1,29 +1,29 @@
 class UsersController < ApplicationController
   respond_to :html
-  
   def new
     @user = User.new
-    respond_with(@user)
   end
-  
+ 
   def create
+    logout_keeping_session!
     @user = User.new(params[:user])
-    if @user.save
-      flash[:notice] = "Your account has been successfully created. Welcome to blockq."
+    success = @user && @user.save
+    if success && @user.errors.empty?
+       # Protects against session fixation attacks, causes request forgery
+      # protection if visitor resubmits an earlier form using back
+      # button. Uncomment if you understand the tradeoffs.
+      # reset session
+      self.current_user = @user # !! now logged in
+      redirect_back_or_default('/', :notice => "Thanks for signing up!  We're sending you an email with your activation code.")
+    else
+      flash.now[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
+      render :action => 'new'
     end
-    respond_with(@user)
   end
   
   def show
     @user = User.find(params[:id])
     respond_with(@user)
   end
-  
-  def login
-    @user = User.find_by_username[params[:username]
-    if @user.present?
-      cookies.permanent[:user_id] = @user.id
-    end
-  end
-  
+
 end

@@ -3,22 +3,22 @@
 <head>
   <title>Quotes</title>
   <%= stylesheet_link_tag :all %>
-	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js", "jquery.rails.js", "jquery.ligatures.js", :as => "blockq.js" %>
+	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js", "jquery.rails.js", "jquery.ligatures.js", "application.js", :as => "blockq.js" %>
 <%= csrf_meta_tag %>
-<script>
-	$(document).ready(function(){
-		$("blockquote").ligatures();
-	});
-</script>
 </head>
-<body>
+<% content_tag :body, :id => "#{controller.controller_name}_#{controller.action_name}" do %>
 	<div class="section" id="header">
 		<%= link_to "blockq", root_path %>
 		<%= link_to "Get involved!", new_user_path %>
+		
+		<%= link_to "blockq bookmarklet", "javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://lvh.me:3000/javascripts/bookmarklet.js';})();"%>
+	
 	</div>
 	<div class="section" id="main">
-		<p id="notice"><%= notice %></p>
+		<% flash.each do |key, message |%>
+			<%= content_tag :p, message, :class => "#{key}" %>
+		<% end %>
 		<%= yield %>
 	</div>
-</body>
+<% end %>
 </html>

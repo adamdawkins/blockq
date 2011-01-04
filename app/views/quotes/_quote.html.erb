@@ -1,0 +1,13 @@
+<% content_tag :div, :class => "article quote", :id => "quote_#{quote.id}" do %>
+	<% content_tag :blockquote, :class => "text", :cite => 	"#{quote.source}" do %> 
+		&#8220;<%= quote.text %>&#8221;
+		<% end %>
+
+		<%= content_tag :cite, quote.author %>
+
+	<% if quote.tags.present? %>
+		<ul class="tags">
+			<%= render quote.tags %>
+		</ul>
+	<% end %>
+<% end %>

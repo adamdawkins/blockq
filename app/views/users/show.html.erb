@@ -1,5 +1,11 @@
 <h1 id=""><%= @user.username %></h1>
-
+<% if !@user.tags.blank? %>
+	<ul id="tags">
+		<%= render @user.tags%>
+	</ul>
+<% else %>
+  Tags will appear here as you add them to your quotes.
+<% end %>
 <h2>Your quotes:</h2>
 <% if !@user.quotes.blank? %>
 	<ul id="quotes">
@@ -16,15 +22,5 @@
  		<p>You haven't added any quotes yet! <%= link_to "Add a quote", new_quote_path %> now.
 	<% end %>
 	
-<% if !@user.tags.blank? %>
-	<ul id="tags">
-  <% for tag in @user.tags %>
-    <li class="tag">
-			<%= link_to tag.name, tag %>
-		</li>
-  <% end %>
-	</ul>
-<% else %>
-  Tags will appear here as you add them to your quotes.
-<% end %>
+
 
