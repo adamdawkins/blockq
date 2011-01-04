@@ -21,7 +21,7 @@ function init() {
 	else {
 		//possibleAuthor = $("cite:first").children().first().html();
 		
-		location.href = 'http://lvh.me:3000/quotes/new?t='+selectedText+'&amp;s='+window.location.href//+'&amp;a='+possibleAuthor;
+		location.href = 'http://blockq.heroku.com/quotes/new?t='+selectedText+'&amp;s='+window.location.href//+'&amp;a='+possibleAuthor;
 		
 		// Inline - we'll do that later
 		/*	$("body").append("\
