@@ -2,7 +2,7 @@ class QuotesController < ApplicationController
   respond_to :html
   before_filter :login_required, :only => [:new, :create]
   def index
-    @quotes = Quote.all
+    @quotes = Quote.order("created_at DESC")
     respond_with(@quotes)
   end
 
