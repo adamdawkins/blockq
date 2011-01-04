@@ -11,7 +11,7 @@
 		<%= link_to "blockq", root_path %>
 		<%= link_to "Get involved!", new_user_path %>
 		
-		<%= link_to "blockq bookmarklet", "javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://lvh.me:3000/javascripts/bookmarklet.js';})();"%>
+		<%= link_to "blockq bookmarklet", "javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://#{request.host_with_port}/javascripts/bookmarklet.js';})();"%>
 	
 	</div>
 	<div class="section" id="main">
