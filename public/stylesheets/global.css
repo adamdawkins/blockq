@@ -21,7 +21,6 @@ body {
 blockquote {
 	font-family:"Georgia"; 
 	line-height:120%; 
-	text-indent:-0.3em; 
 	margin-right:0px; 
 	margin-left:0px;
 }
@@ -46,11 +45,14 @@ cite {
 .section#header a {color:white;}
 
 .section#main {padding:0% 5%;}
-#quotes_show .quote .text {font-size:3em; }
+#quotes_show .quote .text {font-size:3em;text-indent:-0.3em;  }
 #quotes_show .quote cite {font-size: 2.5em;}
 
+
 #quotes_index .quote .text,
-#tags_show .quote .text {font-size:1.5em; padding:0px; margin:0px;}
+#tags_show .quote .text {font-size:1.5em; padding:0px; margin:0px; cursor:pointer;}
+#quotes_index .quote .text:hover,
+#tags_show .quote .text:hover {background:#eee;}
 #quotes_index .quote {border-bottom:1px solid #ccc; margin-bottom:20px;}
 #quotes_index .quote cite,
 #tags_show .quote cite {font-size:1.5em;}
