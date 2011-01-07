@@ -8,16 +8,7 @@
 <% end %>
 <h2>Your quotes:</h2>
 <% if !@user.quotes.blank? %>
-	<ul id="quotes">
-  <% for quote in @user.quotes %>
-    <li class="quote">
-    	<blockquote>
-				<%= raw(quote.text) %>
-			</blockquote>
-			<%= link_to "See quote", quote %>
-    </li>
-  <% end %>
-	</ul>
+	<%= render @user.quotes %>
 <% else %>
  		<p>You haven't added any quotes yet! <%= link_to "Add a quote", new_quote_path %> now.
 	<% end %>

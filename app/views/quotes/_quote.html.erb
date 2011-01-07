@@ -2,7 +2,7 @@
 	<% content_tag :blockquote, :class => "text", :cite => 	"#{quote.source}" do %> 
 		&#8220;<%= quote.text %>&#8221;
 		<% end %>
-
+		<%= link_to "See quote", quote %>
 		<%= content_tag :cite, quote.author %>
 
 	<% if quote.tags.present? %>

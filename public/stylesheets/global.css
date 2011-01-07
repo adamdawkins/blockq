@@ -50,9 +50,7 @@ cite {
 
 
 #quotes_index .quote .text,
-#tags_show .quote .text {font-size:1.5em; padding:0px; margin:0px; cursor:pointer;}
-#quotes_index .quote .text:hover,
-#tags_show .quote .text:hover {background:#eee;}
+#tags_show .quote .text {font-size:1.5em; padding:0px; margin:0px;}
 #quotes_index .quote {border-bottom:1px solid #ccc; margin-bottom:20px;}
 #quotes_index .quote cite,
 #tags_show .quote cite {font-size:1.5em;}
