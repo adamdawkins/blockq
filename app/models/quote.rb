@@ -5,11 +5,13 @@ class Quote < ActiveRecord::Base
   
   validates_presence_of :text, :message => "can't be blank"
   validates_presence_of :user_id
-  attr_accessor :tag_names
   
   before_save :cleanup_text
   after_save :assign_tags
   
+default_scope :order => "created_at DESC"
+  
+  attr_accessor :tag_names
   def tag_names
     @tag_names || tags.map(&:name).join(' ')
   end
