@@ -7,7 +7,7 @@
 
 	<% if quote.tags.present? %>
 		<ul class="tags">
-			<%= render quote.tags %>
+			<%= render quote.tags, :user => user %>
 		</ul>
 	<% end %>
 <% end %>

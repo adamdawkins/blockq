@@ -13,35 +13,35 @@
 ActiveRecord::Schema.define(:version => 20101230234335) do
 
   create_table "quotes", :force => true do |t|
-    t.text     "text"
-    t.string   "author"
-    t.string   "source"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text      "text"
+    t.string    "author"
+    t.string    "source"
+    t.integer   "user_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "taggings", :force => true do |t|
-    t.integer  "quote_id"
-    t.integer  "tag_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "quote_id"
+    t.integer   "tag_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "tags", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "crypted_password",          :limit => 40
-    t.string   "salt",                      :limit => 40
-    t.string   "remember_token"
-    t.datetime "remember_token_expires_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "username"
+    t.string    "crypted_password",          :limit => 40
+    t.string    "salt",                      :limit => 40
+    t.string    "remember_token"
+    t.timestamp "remember_token_expires_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
 end

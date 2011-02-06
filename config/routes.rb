@@ -1,5 +1,7 @@
 Quotes::Application.routes.draw do
-  resources :users
+  resources :users do
+    resources :tags
+  end
   resources :quotes
   resources :tags
   

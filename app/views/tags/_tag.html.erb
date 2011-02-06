@@ -1,3 +1,7 @@
 <% content_tag :li, :class => "tag", :id => "tag_#{tag.id}"  do %>
+	<% unless user.nil? %>
+		<%= link_to tag.name, [user, tag] %>
+	<% else %>
 	<%= link_to tag %>
-<% end%>
+	<% end %>	
+<% end %>

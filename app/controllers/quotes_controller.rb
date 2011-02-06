@@ -2,7 +2,14 @@ class QuotesController < ApplicationController
   respond_to :html
   before_filter :login_required, :only => [:new, :create]
   def index
-    @quotes = Quote.all
+    if !params[:search].nil?
+      @quotes = Quote.where("text like ? or author like ?", "%#{params[:search]}%","%#{params[:search]}%")
+      if @quotes.length == 0
+        flash[:notice] = "No quotes found"
+      end
+    else
+      @quotes = Quote.all    
+    end
     respond_with(@quotes)
   end
 

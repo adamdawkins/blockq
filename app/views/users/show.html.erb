@@ -1,7 +1,7 @@
 <h1 id=""><%= @user.username %></h1>
 <% if !@user.tags.blank? %>
 	<ul id="tags">
-		<%= render @user.tags%>
+		<%= render @user.tags, :user => @user %>
 	</ul>
 <% else %>
   Tags will appear here as you add them to your quotes.

@@ -2,6 +2,7 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   has_many :quotes
+  has_many :tags, :through => :quotes
   accepts_nested_attributes_for :quotes
   include Authentication
   include Authentication::ByPassword
