@@ -1,13 +1,4 @@
 <% content_tag :li, :class => "article quote", :id => "quote_#{quote.id}" do %>
-	<% content_tag :blockquote, :class => "text", :cite => 	"#{quote.source}" do %> 
-	&#8220;&nbsp;<%= quote.text %>&nbsp;&#8221;
-		<% end %>
-		<%= link_to "See quote", quote %>
-		<%= content_tag :cite, twitify(quote.author) %>
-		quoted by <%= link_to quote.user.username, short_user_path(quote.user.username) %> <%= time_ago_in_words(quote.created_at) %> ago.
-	<% if quote.tags.present? %>
-		<ul class="tags">
-			<%= render quote.tags.sort_by {|tag| tag.name} %>
-		</ul>
-	<% end %>
+	<%= render 'quotes/quote_content', :quote => quote %>
+	<%= link_to "permalink", quote %>
 <% end %>

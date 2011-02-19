@@ -1,17 +1,22 @@
-<h1 id=""><%= @user.username %></h1>
-<% if !@user.tags.blank? %>
-	<ul id="tags">
-		<%= render @user.tags, :user => @user %>
-	</ul>
-<% else %>
-  Tags will appear here as you add them to your quotes.
-<% end %>
-<h2>Your quotes:</h2>
-<% if !@user.quotes.blank? %>
-	<%= render @user.quotes %>
-<% else %>
+<div class="section" id="quotes">
+	<h1><%= possession(@user.username) %> quotes:</h1>
+	<% unless @user.quotes.blank? %>
+		<ul>
+			<%= render @user.quotes %>
+		</ul>
+	<% else %>
  		<p>You haven't added any quotes yet! <%= link_to "Add a quote", new_quote_path %> now.
 	<% end %>
+	
+	<% unless @user.tags.blank? %>
+		<ul id="tags">
+			<%= render @user.tags, :user => @user %>
+		</ul>
+	<% else %>
+	  Tags will appear here as you add them to your quotes.
+	<% end %>
+	
+</div>
 	
 
 

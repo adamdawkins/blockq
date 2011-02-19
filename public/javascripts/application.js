@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	var $quotes = $(".quote", "#main");
+	var $main = $('#main'),
+	 $quotes = $('.quote', $main);
 	$quotes.ligatures();
-	$quotes.find('.text').widowFix();
+	$('p, blockquote', $main).widowFix();
 });

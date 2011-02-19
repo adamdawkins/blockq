@@ -1,0 +1,10 @@
+<% content_tag :blockquote, :class => "text", :cite => 	"#{quote.source}" do %> 
+&#8220;&nbsp;<%= quote.text %>&nbsp;&#8221;
+	<% end %>
+	<%= content_tag :cite, twitify(quote.author) %>
+	quoted by <%= link_to quote.user.username, short_user_path(quote.user.username) %> <%= time_ago_in_words(quote.created_at) %> ago.
+<% if quote.tags.present? %>
+	<ul class="tags">
+		<%= render quote.tags.sort_by {|tag| tag.name} %>
+	</ul>
+<% end %>
