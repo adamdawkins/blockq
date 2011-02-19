@@ -3,9 +3,7 @@
 
 div, body, li, h1, h2, h3, h4, h5 {padding:0px; margin:0px;}
 body, p, ol, ul, td { font-family: 'Georgia', verdana, arial, helvetica, sans-serif; font-size:100%;}
-ul {padding:5px 0px;}
-
-
+ul, ol {padding:5px 0px;}
 
 body {
 	background-color: #fff; 
@@ -26,6 +24,7 @@ cite {
 	margin-top:10px;
 }
 
+#main .section {padding:30px 20%;}
 
 #header {
 	height:20px;
@@ -37,7 +36,11 @@ cite {
 
 #header a {color:white;}
 
-#welcome {background:#eee; padding:30px 15px;}
+#flash {padding:5px 15px; color:#fff;}
+#flash.notice {background:#41D722;}
+#flash.error {background:red;}
+
+#welcome {background:#eee; }
 #welcome p {font-size:1.5em;}
 
 #get_started {background-color:#41D722; padding:10px; -webkit-border-radius:3px; font-size:1.8em; color:#fff; text-decoration:none; text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
@@ -58,6 +61,6 @@ cite {
 
 
 
-.tag {font-size: 0.9em; display:inline; list-style-type:none;}
-.tag a {color:#fff; background:#000; text-decoration:none; padding:3px;}
-.tag a:hover {background:#ff9900;}
+#quotes_index .tag, #quotes_show .tag {font-size: 0.9em; display:inline; list-style-type:none;}
+#quotes_index .tag, #quotes_show .tag a {color:#fff; background:#000; text-decoration:none; padding:3px;}
+#quotes_index .tag, #quotes_show .tag a:hover {background:#ff9900;}

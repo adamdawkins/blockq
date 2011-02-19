@@ -4,7 +4,7 @@
 		<% end %>
 		<%= link_to "See quote", quote %>
 		<%= content_tag :cite, quote.author %>
-
+		quoted by <%= link_to quote.user.username, short_user_path(quote.user.username) %> <%= time_ago_in_words(quote.created_at) %> ago.
 	<% if quote.tags.present? %>
 		<ul class="tags">
 			<%= render quote.tags %>

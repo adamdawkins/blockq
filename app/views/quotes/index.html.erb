@@ -1,9 +1,13 @@
 <div class="section" id="welcome">
 	<h1>Welcome to blockq.</h1>
 	<p>Here you can save and tag quotes you want to remember, search for quotes or topics, or find out what people think is worth remembering!</p>
-	<%= link_to "Get started", new_user_path, {:id => "get_started"}%>
+	<%= link_to "Get started", get_started_path, {:id => "get_started"}%>
 </div>
-<ul id="latest_quotes">
-	<%= render @quotes %>
-</ul>
+<div class="section" id="latest_quotes">
+	<h2>Latest quotes</h2>
+	<ul>
+		<%= render @quotes %>
+	</ul>	
+</div>
+
 

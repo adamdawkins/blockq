@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110219005141) do
+ActiveRecord::Schema.define(:version => 20101230234335) do
 
   create_table "quotes", :force => true do |t|
     t.text      "text"
@@ -35,14 +35,13 @@ ActiveRecord::Schema.define(:version => 20110219005141) do
   end
 
   create_table "users", :force => true do |t|
-    t.string    "username"
-    t.string    "crypted_password",          :limit => 40
-    t.string    "salt",                      :limit => 40
-    t.string    "remember_token"
-    t.timestamp "remember_token_expires_at"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "slug"
+    t.string   "username"
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.string   "remember_token"
+    t.datetime "remember_token_expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

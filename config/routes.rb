@@ -1,14 +1,16 @@
 Quotes::Application.routes.draw do
+  
+  resources :quotes
+  resources :tags
   resources :users do
     resources :tags
   end
-  resources :quotes
-  resources :tags
-  
   resource :session, :only => [:new, :create, :destroy]
   match 'login' => 'sessions#new', :as => :login
   match 'logout' => 'sessions#destroy', :as => :logout
-  match 'signup' => 'users#new', :as => :signup
+  match 'get-started' => 'users#new', :as => :get_started
+  match '/q/:id' => 'quotes#show', :as => :short_quote
+  match '/:username' => 'users#show', :as => :short_user
   root :to => 'quotes#index'
   
   
