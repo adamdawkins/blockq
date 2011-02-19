@@ -62,5 +62,5 @@ cite {
 
 
 #quotes_index .tag, #quotes_show .tag {font-size: 0.9em; display:inline; list-style-type:none;}
-#quotes_index .tag, #quotes_show .tag a {color:#fff; background:#000; text-decoration:none; padding:3px;}
-#quotes_index .tag, #quotes_show .tag a:hover {background:#ff9900;}
+#quotes_index .tag a, #quotes_show .tag a {color:#fff; background:#000; text-decoration:none; padding:3px;}
+#quotes_index .tag a:hover, #quotes_show .tag a:hover {background:#ff9900;}
