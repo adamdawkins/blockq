@@ -4,7 +4,8 @@
 div, body, li, h1, h2, h3, h4, h5 {padding:0px; margin:0px;}
 body, p, ol, ul, td { font-family: 'Georgia', verdana, arial, helvetica, sans-serif; font-size:100%;}
 ul, ol {padding:5px 0px;}
-
+li {list-style-type:none;}
+cite, em {font-style:italic; font-family:"Georgia Italic";}
 body {
 	background-color: #fff; 
 	color: #000; 
@@ -15,11 +16,8 @@ blockquote {
 	margin-right:0px; 
 	margin-left:0px;
 }
-blockquote em {
-	font-family:"Georgia Italic";
-}
+
 cite {
-	font-family:"Georgia Italic";
 	display:block; 
 	margin-top:10px;
 }
@@ -43,24 +41,21 @@ cite {
 #welcome {background:#eee; }
 #welcome p {font-size:1.5em;}
 
-#get_started {background-color:#41D722; padding:10px; -webkit-border-radius:3px; font-size:1.8em; color:#fff; text-decoration:none; text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+#get_started {background-color:#41D722; padding:10px; -moz-border-radius:3px; -webkit-border-radius:3px; font-size:1.8em; color:#fff; text-decoration:none; text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
  drop-shadow:1px 1px #000;     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 #get_started:hover{background-color:#48eb28;}
 
+
+li.quote .text {font-size:1.5em; padding:0px 2%; margin:0px; text-indent:-2%; orphans:2;}
+li.quote {padding:10px 2%;}
+li.quote cite {font-size:1.5em;}
+li.quote:nth-of-type(odd) {background-color:#fdfdfd;}
+
 #quotes_show .quote .text {font-size:3em;text-indent:-0.3em;  }
 #quotes_show .quote cite {font-size: 2.5em;}
 
-
-#quotes_index .quote .text,
-#tags_show .quote .text {font-size:1.5em; padding:0px; margin:0px;}
-#quotes_index .quote {border-bottom:1px solid #ccc; margin-bottom:20px;}
-#quotes_index .quote cite,
-#tags_show .quote cite {font-size:1.5em;}
-
-
-
 #quotes_index .tag, #quotes_show .tag {font-size: 0.9em; display:inline; list-style-type:none;}
-#quotes_index .tag a, #quotes_show .tag a {color:#fff; background:#000; text-decoration:none; padding:3px;}
+#quotes_index .tag a, #quotes_show .tag a {color:#fff; background:#666; text-decoration:none; padding:5px; -moz-border-radius:3px; -webkit-border-radius:3px;}
 #quotes_index .tag a:hover, #quotes_show .tag a:hover {background:#ff9900;}

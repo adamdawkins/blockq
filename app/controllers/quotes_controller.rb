@@ -1,6 +1,6 @@
 class QuotesController < ApplicationController
   respond_to :html
-  before_filter :login_required, :only => [:new, :create]
+  before_filter :login_required, :only => [:new, :create, :edit]
   def index
     if !params[:search].nil?
       @quotes = Quote.where("text like ? or author like ?", "%#{params[:search]}%","%#{params[:search]}%")
@@ -30,6 +30,10 @@ class QuotesController < ApplicationController
 
   def edit
     @quote = Quote.find(params[:id])
+    if current_user.id != @quote.user.id
+      flash[:warning] = "Sorry, you can only edit quotes you have created."
+      redirect_to(@quote)
+    end
   end
   
   def create
