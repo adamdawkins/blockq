@@ -3,7 +3,7 @@
 
 div, body, li, h1, h2, h3, h4, h5 {padding:0px; margin:0px;}
 body, p, ol, ul, td { font-family: 'Georgia', verdana, arial, helvetica, sans-serif; font-size:100%;}
-ul, ol {padding:5px 0px;}
+ul, ol {padding:5px 0px; margin:0px;}
 li {list-style-type:none;}
 cite, em {font-style:italic; font-family:"Georgia Italic";}
 body {
@@ -48,7 +48,7 @@ cite {
 #get_started:hover{background-color:#48eb28;}
 
 
-li.quote .text {font-size:1.5em; padding:0px 2%; margin:0px; text-indent:-2%; orphans:2;}
+li.quote .text {font-size:1.5em; padding:0px; margin:0px; text-indent:-0.5em; orphans:2;}
 li.quote {padding:10px 2%;}
 li.quote cite {font-size:1.5em;}
 li.quote:nth-of-type(odd) {background-color:#fdfdfd;}
