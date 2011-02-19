@@ -10,7 +10,9 @@ class QuotesController < ApplicationController
     else
       @quotes = Quote.all    
     end
+  
     respond_with(@quotes)
+    
   end
 
   def show

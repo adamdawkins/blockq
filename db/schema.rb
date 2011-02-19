@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101230234335) do
+ActiveRecord::Schema.define(:version => 20110219005141) do
 
   create_table "quotes", :force => true do |t|
     t.text      "text"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20101230234335) do
     t.timestamp "remember_token_expires_at"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "slug"
   end
 
 end

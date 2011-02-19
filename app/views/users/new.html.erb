@@ -2,14 +2,17 @@
 <% @user.password = @user.password_confirmation = nil %>
 
 <%= form_for :user, :url => users_path do |f| -%>
-<p><%= label_tag 'username' %><br/>
-<%= f.text_field :username %></p>
+<fieldset>
+<%= label_tag 'username' %>
+<%= f.text_field :username %></div>
 
-<p><%= label_tag 'password' %><br/>
+<%= label_tag 'password' %>
 <%= f.password_field :password %></p>
 
-<p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
-<%= f.password_field :password_confirmation %></p>
+<%= label_tag 'password_confirmation', 'Confirm Password' %>
+<%= f.password_field :password_confirmation %></li>
 
-<p><%= submit_tag 'Sign up' %></p>
+<%= submit_tag 'Sign up', {:class => 'submit'}%>
+
+</fieldset>
 <% end -%>

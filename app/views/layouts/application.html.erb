@@ -7,20 +7,20 @@
 <%= csrf_meta_tag %>
 </head>
 <% content_tag :body, :id => "#{controller.controller_name}_#{controller.action_name}" do %>
-	<div class="section" id="header">
+	<div id="header">
 		<%= link_to "blockq", root_path %>
-		<form>
+	<!--	<form>
 		<input type="text" name="search"/>
 		<input type="submit" value="search"/>
-		</form>
-		<%= link_to "Get involved!", new_user_path %>
-		<%= link_to 'New Quote', new_quote_path %>
-		<%= link_to "blockq bookmarklet", "javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://#{request.host_with_port}/javascripts/bookmarklet.js';})();"%>
+		</form> -->
+		<%#= link_to "Get involved!", new_user_path %>
+		<%#= link_to 'New Quote', new_quote_path %>
+		<%#= link_to "blockq bookmarklet", "javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://#{request.host_with_port}/javascripts/bookmarklet.js';})();"%>
 	
 	</div>
 	<div class="section" id="main">
 		<% flash.each do |key, message |%>
-			<%= content_tag :p, message, :class => "#{key}" %>
+			<%= content_tag :p, message, :id => "flash", :class => "#{key}" %>
 		<% end %>
 		<%= yield %>
 	</div>

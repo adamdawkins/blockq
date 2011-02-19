@@ -1,17 +1,10 @@
 /* from scaffold */
 /* TODO: refactor styling */
 
-div, body, li {padding:0px;margin:0px;}
-body, p, ol, ul, td {
-  font-family: 'Georgia', verdana, arial, helvetica, sans-serif;
-	font-size:100%;
-}
-
+div, body, li, h1, h2, h3, h4, h5 {padding:0px; margin:0px;}
+body, p, ol, ul, td { font-family: 'Georgia', verdana, arial, helvetica, sans-serif; font-size:100%;}
 ul {padding:5px 0px;}
 
-div.field, div.actions {
-  margin-bottom: 10px;
-}
 
 
 body {
@@ -33,18 +26,26 @@ cite {
 	margin-top:10px;
 }
 
-.section#header {
-	width:90%; 
+
+#header {
 	height:20px;
-	padding:10px 5%; 
+	padding:10px 15px; 
 	margin:0px;
 	background:#333; 
 	font-family: "Gotham Rounded", Verdana;
 }
 
-.section#header a {color:white;}
+#header a {color:white;}
 
-.section#main {padding:0% 5%;}
+#welcome {background:#eee; padding:30px 15px;}
+#welcome p {font-size:1.5em;}
+
+#get_started {background-color:#41D722; padding:10px; -webkit-border-radius:3px; font-size:1.8em; color:#fff; text-decoration:none; text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+ drop-shadow:1px 1px #000;     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+#get_started:hover{background-color:#48eb28;}
+
 #quotes_show .quote .text {font-size:3em;text-indent:-0.3em;  }
 #quotes_show .quote cite {font-size: 2.5em;}
 

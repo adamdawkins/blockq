@@ -1,3 +1,9 @@
-<h1>Latest quotes</h1>
-<%= render @quotes, :user => @user %>
+<div class="section" id="welcome">
+	<h1>Welcome to blockq.</h1>
+	<p>Here you can save and tag quotes you want to remember, search for quotes or topics, or find out what people think is worth remembering!</p>
+	<%= link_to "Get started", new_user_path, {:id => "get_started"}%>
+</div>
+<ul id="latest_quotes">
+	<%= render @quotes %>
+</ul>
 

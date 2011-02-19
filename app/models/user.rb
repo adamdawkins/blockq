@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :quotes
   has_many :tags, :through => :quotes
   accepts_nested_attributes_for :quotes
+  before_create :make_slug
+  
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
@@ -40,8 +42,10 @@ class User < ActiveRecord::Base
    quotes.map(&:tags).flatten.compact.uniq
   end
 
-  protected
-    
+  private
+  def make_slug
+    self.slug = to_slug(username)
+  end
 
 
 end
