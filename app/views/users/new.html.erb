@@ -1,18 +1,28 @@
+
+<div id="feature">
+	<div class="section">
 <h1>Create a blockq account</h1>
+	<p>All you need is a username and a password to get started with blockq.</p>
+	</div>
+</div>
 <% @user.password = @user.password_confirmation = nil %>
 
+<div class="section">
 <%= form_for :user, :url => users_path do |f| -%>
 <fieldset>
+<div class="field">
 <%= label_tag 'username' %>
-<%= f.text_field :username %></div>
-
+<span>blockq.com/</span><%= f.text_field :username %>
+</div>
+<div class="field password">
 <%= label_tag 'password' %>
-<%= f.password_field :password %></p>
-
+<%= f.password_field :password %>
+</div>
+<div class="field password">
 <%= label_tag 'password_confirmation', 'Confirm Password' %>
-<%= f.password_field :password_confirmation %></li>
-
+<%= f.password_field :password_confirmation %>
+</div>
 <%= submit_tag 'Sign up', {:class => 'submit'}%>
-
 </fieldset>
 <% end -%>
+</div>

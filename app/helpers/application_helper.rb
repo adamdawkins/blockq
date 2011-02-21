@@ -9,11 +9,12 @@ module ApplicationHelper
   end
   
   def possession(name)
-    possessive_name = name 
-    possessive_name << "'"
-    unless /^\w+[s+]$/.match(name).nil?
-      possessive_name << "s"
-    end
+   
+   possessive_name = name 
+   possessive_name << "'"
+   if(/^\w+[s+]$/.match(name).nil?)
+    possessive_name << "s"
+  end
     return possessive_name
   end
   

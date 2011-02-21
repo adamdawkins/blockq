@@ -1,26 +1,27 @@
 /* from scaffold */
 /* TODO: refactor styling */
 
-div, body, li, h1, h2, h3, h4, h5, blockquote {padding:0px; margin:0px;}
-body, p, ol, ul, td { font-family: 'Georgia', verdana, arial, helvetica, sans-serif; font-size:100%;}
+div, body, li, h1, h2, h3, h4, h5, blockquote, fieldset {padding:0px; margin:0px; border:none;}
+body, td { font-family:helvetica,verdana, arial, sans-serif; font-size:100%;}
 ul, ol {padding:5px 0px; margin:0px;}
 li {list-style-type:none;}
+p, blockquote,cite, h1, h2, h3, h4, h5 {font-family:Georgia;}
 cite, em {font-style:italic; font-family:"Georgia Italic";}
 body {
 	background-color: #fff; 
 	color: #000; 
 }
 blockquote {
-	font-family:"Georgia"; 
 	line-height:120%; 
 	text-indent:-0.5em;
-	width:30em;
+	width:35em;
 }
 
 cite {
 	display:block; 
 	margin-top:10px;
 }
+
 #main {text-align:center;}
 #main .section {margin:30px auto; display:inline-block; text-align:left;} 
 
@@ -29,7 +30,6 @@ cite {
 	padding:10px 15px; 
 	margin:0px;
 	background:#333; 
-	font-family: "Gotham Rounded", Verdana;
 }
 
 #header a {color:white;}
@@ -38,10 +38,11 @@ cite {
 #flash.notice {background:#41D722;}
 #flash.error {background:red;}
 
-#welcome {background:#eee;}
-#welcome p {font-size:1.5em; width:30em;}
+#feature {background:#eee;}
+#feature p {font-size:1.5em; width:30em;}
 
-#get_started {background-color:#41D722; padding:10px; -moz-border-radius:3px; -webkit-border-radius:3px; font-size:1.8em; color:#fff; text-decoration:none; text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+
+#get_started {font-family:Georgia;background-color:#41D722; padding:10px; -moz-border-radius:3px; -webkit-border-radius:3px; font-size:1.8em; color:#fff; text-decoration:none; text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
  drop-shadow:1px 1px #000;     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
@@ -53,10 +54,17 @@ li.quote {padding:10px 2%;}
 li.quote cite {font-size:1.5em;}
 li.quote:nth-of-type(odd) {background-color:#fdfdfd;}
 
-
 #quotes_show .quote cite {font-size: 2.5em;}
 
 .tag {font-size: 0.9em; display:inline; list-style-type:none;}
 .tag a {color:#fff; background:#666; text-decoration:none; padding:5px; -moz-border-radius:3px; -webkit-border-radius:3px;}
 .tag a:hover {background:#ff9900;}
+
+#users_new form {width:30em; font-size:1.5em;}
+#users_new .field {padding:10px inherit;}
+#users_new .password {display:inline-block;}
+#users_new label {display:block;}
+#users_new input {font-size:1.0em; width:8em;}
+#users_new span {width:30em; display:inline; overflow:hidden;}
+
 
